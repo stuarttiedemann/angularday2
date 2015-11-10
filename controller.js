@@ -7,7 +7,10 @@ angular.module('myApp',[]).controller('myController',function($scope){
 		$scope.newName = "";
 		$scope.newDesc = "";
 	}
-
+	$scope.removeStudent = function(studentToRemove){
+		var i = $scope.students.indexOf(studentToRemove);
+		$scope.students.splice(i,1);
+	}
 	$scope.students = [
 		{
 			name: 'Freddy',
@@ -16,6 +19,10 @@ angular.module('myApp',[]).controller('myController',function($scope){
 		{
 			name: 'Chance',
 			desc: 'Bootstrap Guy'
+		},
+		{
+			name: 'Chase',
+			desc: 'Alter ego for Chance'
 		},
 		{
 			name: 'Will',
